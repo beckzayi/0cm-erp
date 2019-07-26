@@ -21,17 +21,35 @@ $params = array(
     'enabled' => 1,
     'brand_name' => 'Kuegou 酷衣购',
     'i_id' => 'AZ-14012', // $supplier_reference
-    'shop_i_id' => 'AZ-14012' // $supplier_reference
+    'shop_i_id' => 'AZ-14012', // $supplier_reference
+    // 'skus' => array(
+    //     {
+    //         'sku_id': 'AZ-14012C02', // $sku
+    //         'shop_sku_id': 'AZ-14012C02', // $sku
+    //         'name' => 'KUEGOU Classic Crew-Neck Grey Knit (AZ-14012)',
+    //         'sale_price': null,
+    //         'enabled': 1,
+    //         'brand_name': 'Kuegou 酷衣购',
+    //         'sku_code': '3357672750441', // 国际码
+    //         'color': null,
+    //         'properties_name': null,
+    //         'properties_value': null,
+    //         'pic': null,
+    //         'pic_big': null,
+    //         'weight': 0,
+    //         'short_name': '1'
+    //     }
+    // )
 );
 
 $params['skus'][] = array(
     'sku_id' => 'AZ-14012C02', // $sku
     'shop_sku_id' => 'AZ-14012C02', // $sku
     'name' => 'KUEGOU Classic Crew-Neck Grey Knit (AZ-14012)',
+    'sku_code' => '3357672750441', // 国际码
     'sale_price' => null,
     'enabled' => 1,
     'brand_name' => 'Kuegou 酷衣购',
-    'sku_code' => '3357672750441', // 国际码
     'color' => null,
     'properties_name' => null,
     'properties_value' => null,
@@ -57,6 +75,8 @@ $params['skus'][] = array(
     'weight' => 0,
     'short_name' => '1'
 );
+
+print_r('<pre>'); print_r((object)$params); print_r('</pre>');
 
 $response = $service->item_upload((object)$params); 
 

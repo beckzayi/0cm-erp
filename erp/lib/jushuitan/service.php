@@ -19,7 +19,15 @@ class Service {
         if($params == null) {
             $params = (object)array();
         }
-        return $this->__client->call('item.upload', $params);
+        return $this->__client->call('item.upload', [$params]);
+    }
+
+    // 普通商品查询
+    public function sku_query($params = null) {
+        if($params == null) {
+            $params = (object)array();
+        }
+        return $this->__client->call('sku.query', $params);
     }
 }
 ?>
