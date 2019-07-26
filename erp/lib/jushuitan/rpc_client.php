@@ -66,7 +66,6 @@ class RpcClient {
     $post_data = '';
     try {
       $post_data = json_encode($data);
-
       $url .='?'.http_build_query($url_params);
       if($this->config->debug_mode) echo $url;
       $ch = curl_init($url);
