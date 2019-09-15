@@ -29,5 +29,10 @@ class Service {
         }
         return $this->__client->call('sku.query', $params);
     }
+
+    // 刷新 token - 解决Token已超时
+    public function refresh_token() {
+        return $this->__client->call('refresh.token', null);
+    }
 }
 ?>
